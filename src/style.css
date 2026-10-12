@@ -203,11 +203,11 @@ p + p {
   padding-top: 4px;
 }
 
-.brand img {
+.brand :is(img, .inline-art) {
   transition: transform 0.3s ease;
 }
 
-.brand:hover img {
+.brand:hover :is(img, .inline-art) {
   transform: rotate(-12deg) scale(1.08);
 }
 
@@ -416,7 +416,7 @@ main > .hero {
   transform: translateY(-6px) rotate(-6deg);
 }
 
-.avatars img {
+.avatars :is(img, .inline-art) {
   width: 100%;
   height: 100%;
 }
@@ -451,26 +451,25 @@ main > .banner {
   padding: 0;
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(8, 1fr);
   gap: clamp(10px, 1.8vw, 20px);
 }
-
-.tiles li {
+.tiles__row { min-width: 0; }
+.tiles__track { display: flex; width: 200%; }
+.tiles__group {
+  display: flex;
+  flex: 0 0 50%;
+  gap: clamp(10px, 1.8vw, 20px);
+  padding-right: clamp(10px, 1.8vw, 20px);
+}
+.tile {
+  flex: 1;
+  min-width: 0;
   aspect-ratio: 1;
   border-radius: 50%;
   background: var(--paper);
   overflow: hidden;
-  transition: transform 0.3s ease;
 }
-
-.tiles li:hover {
-  transform: scale(1.08) rotate(8deg);
-}
-
-.tiles img {
-  width: 100%;
-  height: 100%;
-}
+.tiles img { width: 100%; height: 100%; }
 
 .banner__cards {
   position: absolute;
@@ -706,7 +705,7 @@ main > .banner {
     grid-template-columns: 1fr;
   }
 
-  .split--media > img {
+  .split--media > :is(img, .inline-art) {
     order: -1;
   }
 
@@ -714,13 +713,8 @@ main > .banner {
     grid-template-columns: repeat(4, 1fr);
   }
 
-  .tiles {
-    grid-template-columns: repeat(4, 1fr);
-  }
-
-  .tiles li:nth-child(n + 25) {
-    display: none;
-  }
+  .tiles__track { width: 400%; }
+  .tiles__row:nth-child(n + 4) { display: none; }
 
   .banner__cards {
     position: relative;
@@ -764,5 +758,61 @@ main > .banner {
   *::after {
     transition: none !important;
     scroll-behavior: auto !important;
+  }
+}
+
+/* Page motion stays separate from the illustrations' own animation classes. */
+.inline-art { display: block; width: 100%; max-width: 100%; height: auto; }
+.inline-art.hero__cast { width: min(1240px, 100% - 24px); }
+.inline-art.story__art { width: min(900px, 100%); }
+.inline-art.footer__art { width: clamp(200px, 26vw, 300px); }
+.brand .inline-art { width: 36px; flex-shrink: 0; }
+.hero__letter { display: inline-block; transform-origin: 50% 80%; }
+
+@media (prefers-reduced-motion: no-preference) {
+  html.js .reveal {
+    opacity: 0;
+    translate: 0 24px;
+    transition: opacity .65s ease var(--reveal-delay, 0ms), translate .65s cubic-bezier(.22,1,.36,1) var(--reveal-delay, 0ms), transform .35s cubic-bezier(.34,1.56,.64,1), box-shadow .25s ease, background .18s ease, color .18s ease;
+  }
+  html.js .reveal.is-visible { opacity: 1; translate: 0 0; }
+  .hero__letter {
+    animation: letter-pop .7s cubic-bezier(.34,1.56,.64,1) calc(var(--letter) * 65ms) both,
+      letter-wiggle 4.5s ease-in-out calc(1.6s + var(--letter) * .23s) infinite;
+  }
+  .tiles__track { animation: portrait-drift 40s linear infinite; }
+  .tiles__row:nth-child(even) .tiles__track { animation-direction: reverse; }
+  .pill, .card, .mini-card {
+    transition: transform .35s cubic-bezier(.34,1.56,.64,1), box-shadow .25s ease, background .18s ease, color .18s ease;
+  }
+  @media (hover: hover) {
+    .pill:hover, .card:hover, .mini-card:hover { transform: translateY(-3px) scale(1.03); }
+    .avatars li:hover, .tile:hover { animation: avatar-wiggle .65s ease-in-out; }
+  }
+  .pill:active, .card:active, .mini-card:active { transform: scale(.97); }
+  @media (max-width: 800px) { .tiles__track { animation-duration: 60s; } }
+}
+@keyframes letter-pop {
+  from { opacity: 0; transform: translateY(40px) rotate(-8deg); }
+  to { opacity: 1; transform: translateY(0) rotate(0); }
+}
+@keyframes letter-wiggle {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+@keyframes portrait-drift { to { transform: translateX(-50%); } }
+@keyframes avatar-wiggle {
+  0%, 100% { transform: rotate(0); }
+  25%, 75% { transform: rotate(-6deg); }
+  50% { transform: rotate(6deg); }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+  html { scroll-behavior: auto; }
+  .reveal { opacity: 1 !important; translate: none !important; }
+  .hero__letter, .tiles__track, .banner__word,
+  .pill:hover, .pill:active, .card:hover, .card:active, .mini-card:hover, .mini-card:active,
+  .avatars li:hover, .tile:hover, .text-link:hover, .brand:hover .inline-art, .socials a:hover {
+    transform: none !important;
   }
 }
