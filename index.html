@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doodleville — Drawing a brighter world, one line at a time</title>
+    <meta name="description" content="Doodleville is a hand-drawn world of ink creatures called Scribbles. Collect them, create with them, and help keep the ink flowing." />
+    <link rel="icon" type="image/svg+xml" href="/art/logo.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Luckiest+Guy&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="nav" id="top">
+      <div class="nav__inner">
+        <a class="brand" href="#top" aria-label="Doodleville home">
+          <img src="/art/logo.svg" alt="" width="36" height="36" />
+          <span>doodleville</span>
+        </a>
+        <button class="nav__toggle" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
+        <nav class="nav__menu" id="nav-menu">
+          <a href="#story">Story</a>
+          <a href="#scribbles">Scribbles</a>
+          <a href="#studio">Studio</a>
+          <a href="#fund">Fund</a>
+          <a href="#journal">Journal</a>
+          <a class="pill pill--black" href="#join">Join us</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <!-- 1. Hero -->
+      <section class="hero">
+        <h1 class="hero__word" aria-label="Doodleville">
+          <span class="hero__line">DOODLE</span>
+          <img class="hero__cast" src="/art/hero-cast.svg" alt="Six Scribbles — Quill, Nib, Blot, Smudge, Loop and Dot — standing together" />
+          <span class="hero__line">VILLE</span>
+        </h1>
+        <p class="hero__sub">Drawing a brighter world, one line at a time.</p>
+        <div class="actions actions--center">
+          <a class="pill pill--outline" href="#scribbles">Meet the Scribbles</a>
+          <a class="pill pill--black" href="#join">Start your journey</a>
+        </div>
+      </section>
+
+      <!-- 2. Story -->
+      <section class="wrap story" id="story">
+        <img class="story__art" src="/art/danger.svg" alt="Blot watching a cracked island being erased at the edges" />
+        <div class="split">
+          <h2 class="h-bold">The ink of Doodleville is fading!</h2>
+          <div>
+            <p>
+              Somewhere past the margins, a giant eraser has started rubbing out the edges of our world. Trees go
+              dotted, rooftops lose their lines, and whole islands drift off the page. The Scribbles noticed first —
+              they always do — and they've decided they won't stand around while their home turns back into blank paper.
+            </p>
+            <a class="text-link" href="#journal">Read the first chapter →</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 3. Road card -->
+      <section class="wrap">
+        <div class="card card--outline card--split">
+          <img src="/art/lunchbox.svg" alt="An open lunchbox packed with a sandwich, a folded map and a pencil" />
+          <div>
+            <h2 class="h-bold">Sharpen your pencil, it's a long road.</h2>
+            <p>
+              Redrawing a world takes more than one good afternoon. Every week we open a new stretch of the map, and
+              every Scribble who joins brings their own line to it — a bridge here, a lighthouse there, a very
+              questionable soup shop on the corner.
+            </p>
+            <p>
+              Pack a snack, bring your favorite pencil, and come as you are. Nobody here draws perfectly. That's sort of
+              the whole point.
+            </p>
+            <div class="actions">
+              <a class="pill pill--black" href="#join">Pack my lunchbox</a>
+              <a class="pill pill--outline" href="#journal">See the map</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. Collectibles -->
+      <section class="wrap" id="scribbles">
+        <div class="card card--black collect">
+          <h2 class="h-display">Doodleville Collectibles</h2>
+          <p>
+            Each Scribble is hand-inked, one of a kind, and comes with a tiny backstory written by the artist who drew
+            them. Adopt one, name it, and it becomes a resident of Doodleville — with a house on the map to prove it.
+          </p>
+          <a class="pill pill--white" href="#join">Browse the collection</a>
+          <ul class="avatars" aria-label="Featured Scribbles">
+            <li><img src="/art/avatar-1.svg" alt="Blot" /></li>
+            <li><img src="/art/avatar-2.svg" alt="Nib" /></li>
+            <li><img src="/art/avatar-3.svg" alt="Smudge in glasses" /></li>
+            <li><img src="/art/avatar-4.svg" alt="Quill" /></li>
+            <li><img src="/art/avatar-5.svg" alt="Loop" /></li>
+            <li><img src="/art/avatar-6.svg" alt="Dot with a bow" /></li>
+            <li><img src="/art/avatar-7.svg" alt="Rubb" /></li>
+            <li><img src="/art/avatar-8.svg" alt="Tuft" /></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- 5. Kindness -->
+      <section class="wrap split split--media">
+        <div>
+          <h2 class="h-bold">Kindness is our favorite color</h2>
+          <p>
+            In a world drawn entirely in black and white, the brightest thing you can add is a good deed. Scribbles
+            share pencils, cheer for wobbly first drafts, and always save the last cookie for whoever looks like they
+            need it most. We think that's worth copying.
+          </p>
+          <a class="pill pill--outline" href="#fund">How we give back</a>
+        </div>
+        <img src="/art/kindness.svg" alt="Smudge and Dot holding the strings of one heart-shaped balloon" />
+      </section>
+
+      <!-- 6. Universe -->
+      <section class="wrap universe">
+        <img class="universe__art" src="/art/lineup.svg" alt="Nib, Dot, Blot, Tuft, Smudge, Rubb, Quill and Loop standing in a row" />
+        <div class="split">
+          <h2 class="h-bold">Sketching a whole universe</h2>
+          <div>
+            <p>
+              Eight founding Scribbles, hundreds of neighbors, and new faces doodled into existence every season.
+              There are picture books in the works, a sticker club, a slightly chaotic animated short, and a board game
+              that ends whenever someone draws a snack.
+            </p>
+            <a class="pill pill--outline" href="#journal">Explore the universe</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. Stay inky banner -->
+      <section class="banner">
+        <p class="banner__word" aria-hidden="true">stayinky</p>
+        <div class="banner__stage">
+          <ul class="tiles" aria-hidden="true"></ul>
+          <div class="banner__cards">
+            <article class="mini-card" id="studio">
+              <h3>Doodleville Studio</h3>
+              <p>Our little workshop where artists, writers and animators turn napkin sketches into stories, toys and shorts.</p>
+              <a class="pill pill--black" href="#studio">Visit the Studio</a>
+            </article>
+            <article class="mini-card" id="fund">
+              <h3>Doodleville Fund</h3>
+              <p>A slice of every collectible goes toward art supplies and classes for young doodlers who need them.</p>
+              <a class="pill pill--black" href="#fund">Support the Fund</a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- 8. Building together -->
+      <section class="wrap build" id="journal">
+        <img src="/art/scene.svg" alt="The Scribbles building a treehouse workshop with a ladder, planks and bunting" />
+        <div>
+          <h2 class="h-bold">Building together</h2>
+          <p>
+            Doodleville isn't drawn by one hand. Holders vote on what we build next, artists pitch new neighborhoods,
+            and every Friday the whole community gathers in the Journal to share sketches, swap tips and sign off on
+            the week's new corner of the map.
+          </p>
+          <a class="pill pill--black" href="#join">Grab a hammer</a>
+        </div>
+      </section>
+
+      <!-- 9. Join -->
+      <section class="wrap join" id="join">
+        <h2 class="h-display">Join the adventure</h2>
+        <p>
+          Become a Scribble-keeper, follow the story as it unfolds, and help us keep every line of Doodleville crisp,
+          bold and full of mischief.
+        </p>
+        <a class="pill pill--black pill--lg" href="#newsletter">Start drawing with us</a>
+      </section>
+    </main>
+
+    <!-- 10. Footer -->
+    <footer class="footer">
+      <div class="wrap footer__grid">
+        <div class="footer__brand">
+          <p class="footer__word">doodleville</p>
+          <p class="footer__tag">Drawing a brighter world, one line at a time.</p>
+          <form class="newsletter" id="newsletter">
+            <label class="sr-only" for="email">Email address</label>
+            <input id="email" type="email" name="email" placeholder="you@example.com" required />
+            <button class="pill pill--black" type="submit">Subscribe</button>
+          </form>
+          <p class="newsletter__msg" role="status" aria-live="polite"></p>
+          <ul class="socials">
+            <li>
+              <a href="#" aria-label="Doodleville on X">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4l16 16M20 4L4 20" /></svg>
+              </a>
+            </li>
+            <li>
+              <a href="#" aria-label="Doodleville on Instagram">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.2" cy="6.8" r="0.6" /></svg>
+              </a>
+            </li>
+            <li>
+              <a href="#" aria-label="Doodleville on Discord">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 6.5c3-1.3 7-1.3 10 0 1.8 2.6 2.7 5.6 2.5 9.5-1.5 1.2-3 1.9-4.5 2.2l-1-2M7 6.5C5.2 9.1 4.3 12.1 4.5 16c1.5 1.2 3 1.9 4.5 2.2l1-2M7.5 15.5c3 1.4 6 1.4 9 0" /><circle cx="9.5" cy="12" r="1.2" /><circle cx="14.5" cy="12" r="1.2" /></svg>
+              </a>
+            </li>
+            <li>
+              <a href="#" aria-label="Doodleville on YouTube">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="4" /><path d="M10 9.2v5.6l4.8-2.8z" /></svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <img class="footer__art" src="/art/adventure.svg" alt="Nib waving goodbye with a backpack on" />
+      </div>
+      <div class="wrap footer__bottom">
+        <p>© 2026 Doodleville. Drawn with love.</p>
+        <a href="#top">Back to top ↑</a>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
